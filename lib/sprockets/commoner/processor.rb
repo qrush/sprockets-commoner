@@ -78,6 +78,7 @@ module Sprockets
         filename = input[:filename]
 
         return unless should_process?(filename)
+        ::Rails.logger.info ">>> [#{Time.now}] Commoner processing #{filename}"
 
         @env = input[:environment]
         @required = input[:metadata][:required].to_a
